@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Firstlink Exim - Resend Verification Email</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #f3f3f320;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .container {
+        max-width: 600px;
+        width: 100%;
+        margin: 20px auto;
+      }
+
+      .logo {
+        margin-bottom: 1rem;
+        padding-inline: 1rem;
+      }
+
+      .card {
+        width: 100%;
+        background-color: #fff;
+        border: 1px solid #99999960;
+        border-radius: 4px;
+        padding: 20px;
+        font-size: 16px;
+      }
+
+      .title {
+        line-height: 2rem;
+        font-weight: 600;
+        text-align: center;
+      }
+
+      p {
+        font-size: 14px;
+        color: #444;
+      }
+
+      .name {
+        color: black;
+        font-weight: 600;
+      }
+
+      .btn {
+        text-decoration: none;
+        padding: 12px 36px;
+        border-radius: 4px;
+        border: none;
+        background-color: #ff5252;
+        color: #fff;
+        font-size: 14px;
+        font-weight: 500;
+        cursor: pointer;
+        text-decoration: none;
+        transition: all 0.3s ease-in-out;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <div class="title">
+          <h2>Resend Verification Email</h2>
+        </div>
+        <p style="margin-top: 16px">
+          Hello <span class="name"><%= name %></span>,
+        </p>
+
+        <p style="margin-top: 16px; margin-bottom: 16px">
+          We noticed that you haven't verified your email yet. Please complete
+          the verification process to activate your account.
+        </p>
+
+        <p style="margin-top: 16px; margin-bottom: 16px; line-height: 26px">
+          You're just a step away from accessing all the features of our
+          platform. Click the button below to verify your email address. This
+          link will expire in
+          <span style="color: black; font-weight: 600">10 minutes</span>.
+        </p>
+
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+            margin-top: 16px;
+            width: 100%;
+          "
+        >
+          <a
+            href="<%= href %>"
+            target="_blank"
+            class="btn"
+            style="color: white"
+          >
+            Verify Email
+          </a>
+        </div>
+
+        <div style="margin-top: 16px; margin-bottom: 16px;">
+          <p>Regards</p>
+          <p style="margin-top: 4px; font-weight: 500;">
+            FirstLink Export & Import Team
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
