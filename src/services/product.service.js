@@ -87,9 +87,9 @@ class ProductService {
     // const endDate = new Date();
     // endDate.setDate(endDate.getDate() + 7);
 
-    const currentDate = new Date();
-    const endDate = new Date(currentDate);
-    endDate.setDate(endDate.getDate() - 7);
+    const endDate = new Date();
+    const startDate = new Date()
+    startDate.setDate(startDate.getDate() - 7);
     
     const { q, category, sortBy, size, color, type, price } = params;
     const page = Number(params.page) || 1;
@@ -141,7 +141,7 @@ class ProductService {
       };
     }
 
-    query.createdAt = { $gte: endDate, $lte: currentDate };
+    query.createdAt = { $gte: startDate, $lte: endDate };
 
     const [products, total] = await Promise.all([
       Product.find(query).skip(skip).limit(limit).sort(sortCriteria).exec(),
